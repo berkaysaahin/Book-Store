@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  //idnin tek tek arttırılacağını söyler
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="book_id")
     private int id;
 
@@ -42,6 +42,10 @@ public class Product {
 
     @Column(name="isbn")
     private String isbn;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 
 
