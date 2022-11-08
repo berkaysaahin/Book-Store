@@ -12,7 +12,7 @@ import javax.persistence.*;
 
 @Table(name="books")
 
-public class Product {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +28,7 @@ public class Product {
     @Column(name="units_in_stock")
     private int unitsInStock;
 
-    @Column(name="unit_price")
+    @Column(name="pages")
     private int pages;
 
     @Column(name="publisher")
