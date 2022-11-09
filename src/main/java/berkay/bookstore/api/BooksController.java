@@ -45,7 +45,7 @@ public class BooksController {
         return this.bookService.getByBookName(bookName);
     }
 
-    @GetMapping("/getByBookNameAndCategory_CategoryId")
+    @GetMapping("/getByBookNameAndCategory")
     public Book getByBookNameAndCategory_CategoryId(@RequestParam String bookName,@RequestParam int categoryId){
         return this.bookService.getByBookNameAndCategory_CategoryId(bookName, categoryId);
     }

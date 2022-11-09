@@ -1,6 +1,7 @@
 package berkay.bookstore.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,7 @@ public class Category {
     @Column(name="category_id")
     private int categoryId;
 
+    @NotNull
     @Column(name="category_name")
     private String categoryName;
 
