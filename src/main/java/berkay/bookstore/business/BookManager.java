@@ -3,17 +3,25 @@ package berkay.bookstore.business;
 import berkay.bookstore.dataAccess.BookDao;
 import berkay.bookstore.entities.Book;
 import berkay.bookstore.entities.BookWithCategoryDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
+@Service
 public class BookManager implements BookService{
 
 
     private BookDao bookDao;
+
+    @Autowired
+    public BookManager(BookDao bookDao){
+        this.bookDao = bookDao;
+    }
 
 
     @Override
@@ -51,7 +59,7 @@ public class BookManager implements BookService{
     }
 
     @Override
-    public List<Book> getByProductNameOrCategory_CategoryId(String bookName, int categoryId) {
+    public List<Book> getByBookNameOrCategory_CategoryId(String bookName, int categoryId) {
         return this.bookDao.getByBookNameOrCategory_CategoryId(bookName,categoryId);
     }
 

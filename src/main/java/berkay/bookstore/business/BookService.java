@@ -1,12 +1,12 @@
 package berkay.bookstore.business;
 
 import berkay.bookstore.entities.BookWithCategoryDto;
-import org.springframework.stereotype.Service;
+
 import berkay.bookstore.entities.Book;
 
 import java.util.List;
 
-@Service
+
 public interface BookService {
 
     List<Book> getAll();
@@ -21,7 +21,7 @@ public interface BookService {
 
     Book getByBookNameAndCategory_CategoryId(String bookName,int categoryId);
 
-    List<Book> getByProductNameOrCategory_CategoryId(String bookName,int categoryId);
+    List<Book> getByBookNameOrCategory_CategoryId(String bookName,int categoryId);
 
     List<Book> getByCategory_CategoryIdIn(List<Integer> categories);
 
