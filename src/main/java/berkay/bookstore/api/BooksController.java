@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/books")
+@RequestMapping(value = "/api/books")
 public class BooksController {
 
     private BookService bookService;
@@ -25,37 +25,37 @@ public class BooksController {
         return this.bookService.getAll();
     }
 
-    @GetMapping("/getAllSorted")
+    @GetMapping(value = "/getAllSorted")
     public List<Book> getAllSorted(){
         return this.bookService.getAllSorted();
     }
 
-    @GetMapping("/getAllByPage")
+    @GetMapping(value = "/getAllByPage")
     public List<Book> getAll(int pageNo,int pageSize){
         return this.bookService.getAll(pageNo,pageSize);
     }
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     public String add(@RequestBody Book book){
         return this.bookService.add(book);
     }
 
-    @GetMapping("/getByBookName")
+    @GetMapping(value = "/getByBookName")
     public Book getByBookName(@RequestParam String bookName) {
         return this.bookService.getByBookName(bookName);
     }
 
-    @GetMapping("/getByBookNameAndCategory")
+    @GetMapping(value = "/getByBookNameAndCategory")
     public Book getByBookNameAndCategory_CategoryId(@RequestParam String bookName,@RequestParam int categoryId){
         return this.bookService.getByBookNameAndCategory_CategoryId(bookName, categoryId);
     }
 
-    @GetMapping("/getByBookNameContains")
+    @GetMapping(value = "/getByBookNameContains")
     public List<Book> getByBookNameContains(@RequestParam String bookName) {
         return this.bookService.getByBookNameContains(bookName);
     }
 
-    @GetMapping("/getBookWithCategoryDetails")
+    @GetMapping(value = "/getBookWithCategoryDetails")
     public List<BookWithCategoryDto> getBookWithCategoryDetails() {
         return this.bookService.getBookWithCategoryDetails();
 
