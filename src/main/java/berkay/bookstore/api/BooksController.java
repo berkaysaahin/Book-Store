@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/books")
+@CrossOrigin
 public class BooksController {
 
     private BookService bookService;

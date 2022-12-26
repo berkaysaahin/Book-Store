@@ -26,6 +26,10 @@ public class Book {
     private String bookName;
 
     @NotNull
+    @Column(name="author")
+    private String author;
+
+    @NotNull
     @Column(name="unit_price")
     private int unitPrice;
 
@@ -53,8 +57,8 @@ public class Book {
     @Column(name="isbn")
     private String isbn;
 
-    @NotNull
-    @ManyToOne
+
+    @ManyToOne()
     @JoinColumn(name = "category_id")
     private Category category;
 
