@@ -13,6 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping(value="/api/users")
+@CrossOrigin
 public class UsersController {
 
     private UserService userService;
@@ -23,8 +24,8 @@ public class UsersController {
     }
 
     @PostMapping(value = "/add")
-    public String add(@RequestBody User user){
-        return this.userService.add(user);
+    public void add(@RequestBody User user){
+         this.userService.add(user);
     }
 
     @GetMapping(value = "/findByEmail")

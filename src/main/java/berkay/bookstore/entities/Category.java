@@ -16,6 +16,8 @@ import java.util.List;
 @Entity
 @Table(name="categories")
 public class Category {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name="category_id")
     private int categoryId;

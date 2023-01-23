@@ -37,8 +37,8 @@ public class BooksController {
     }
 
     @PostMapping(value = "/add")
-    public String add(@RequestBody Book book){
-        return this.bookService.add(book);
+    public void add(@RequestBody Book book){
+         this.bookService.add(book);
     }
 
     @GetMapping(value = "/getByBookName")
